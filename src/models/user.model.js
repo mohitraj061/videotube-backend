@@ -49,18 +49,20 @@ const userSchema = new Schema(
     }, { timestamps: true }
 );
 
-// don't use arrow function inside 'pre' method
+// don't use arrow function (because 'this' is not available in arrow function)
 userSchema.pre('save', async function (next) {
     if (!this.isModified("password")) return next();
 
-    this.password = bcrypt.hash(this.password, 10);
+    this.password = await bcrypt.hash(this.password, 10);
     next();
 });
 
+// don't use arrow function
 userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password);
 };
 
+// don't use arrow function
 userSchema.methods.generateAccessToken = function () {
     return jwt.sign(
         {
@@ -76,6 +78,7 @@ userSchema.methods.generateAccessToken = function () {
     );
 };
 
+// don't use arrow function
 userSchema.methods.generateRefreshToken = function () {
     return jwt.sign(
         {
