@@ -31,9 +31,5 @@ A modular Node.js backend for a YouTube-like video sharing platform with authent
 
 - [Model Link](https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj)
 
-## License
-
-ISC
-
 ---
 Built by Mohit Raj
