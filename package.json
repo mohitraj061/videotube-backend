@@ -1,7 +1,7 @@
 {
-  "name": "03-backend",
+  "name": "videotube-backend",
   "version": "1.0.0",
-  "description": "A advance backend system for practice.",
+  "description": "A backend system like youtube.",
   "keywords": [
     "javascript",
     "backend"

@@ -40,7 +40,7 @@ const userSchema = new Schema(
         ],
         password: {
             type: String,
-            required: [true, 'Password is required']
+            required: [true, 'Password is required']   // if it is not true then it will show this message - 'Password is required'
         },
         refreshToken: {
             type: String
